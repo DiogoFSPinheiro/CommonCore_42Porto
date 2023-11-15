@@ -74,7 +74,8 @@ int	ft_lenstr(char *str)
 void	ft_putnbr_base(int nb, char *base)
 {
 	int	len;
-
+	
+    len = ft_lenstr(base);
 	if (nb < 0)
 	{
 		ft_putchar('-');
@@ -134,12 +135,19 @@ int	ft_printf(const char *format, ...)
 
 void main()
 {
+
     ft_printf("o char é: %c\n", 'c');
     printf("o char é: %c\n", 'c');
     ft_printf("o nbr é: %i\n", 12345);
     printf("o nbr é: %i\n", 12345);
     ft_printf("o str é: %s\n", "oh baby a triple");
     printf("o str é: %s\n", "oh baby a triple");
+    ft_printf("o nbr em hexa é: %x\n", 16345);
+    printf("o nbr em hexa é: %x\n", 16345);
+    ft_printf("o nbr em hexa é: %X\n", 16345);
+    printf("o nbr em hexa é: %X\n", 16345);
+    ft_printf("toma um %%\n");
+    printf("toma um %%\n");
     
     
     
