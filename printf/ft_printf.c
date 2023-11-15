@@ -107,6 +107,8 @@ int	print_format(char type, va_list args)
 		ft_putnbr_base(va_arg(args, int), "0123456789abcdef");
 	else if (type == 'X')
 	    ft_putnbr_base(va_arg(args, int), "0123456789ABCDEF");
+	
+//	else if (type == 'p')
 	    
 	else if (type == '%')
 		ft_putchar('%');
@@ -135,7 +137,8 @@ int	ft_printf(const char *format, ...)
 
 void main()
 {
-
+    char *ptr= "ola bro";
+    
     ft_printf("o char é: %c\n", 'c');
     printf("o char é: %c\n", 'c');
     ft_printf("o nbr é: %i\n", 12345);
@@ -146,8 +149,9 @@ void main()
     printf("o nbr em hexa é: %x\n", 16345);
     ft_printf("o nbr em hexa é: %X\n", 16345);
     printf("o nbr em hexa é: %X\n", 16345);
-    ft_printf("toma um %%\n");
-    printf("toma um %%\n");
+    ft_printf("toma um %i %%\n", 100);
+    printf("toma um %i %%\n", 100);
+    printf("toma um %p\n", &ptr);
     
     
     
