@@ -12,23 +12,23 @@
 
 #include "ft_printf.h"
 
-int	ft_putnbr_ptr(unsigned long long nb, char *base, int fd, int c)
+int	ft_putnbr_ptr(unsigned long long ptr, char *base, int fd, int c)
 {
 	unsigned long long	len;
 	
-	if (nb == 0)
+	if (ptr == 0)
 	{
 		c = ft_putstr_fd("(nil)", 1);
 		return (c);
 	}
 	c += ft_putstr_fd("0x", 1);
 	len = ft_strlen(base);
-	if (nb >= len)
+	if (ptr >= len)
 	{
-		c = ft_putnbr_ptr(nb / len, base, fd, c);
-		nb = nb % len;
+		c = ft_putnbr_ptr(ptr / len, base, fd, c);
+		ptr = ptr % len;
 	}
-	if (nb < len)
-		c += ft_putchar_fd(base[nb], fd);
+	if (ptr < len)
+		c += ft_putchar_fd(base[ptr], fd);
 	return (c);
 }
