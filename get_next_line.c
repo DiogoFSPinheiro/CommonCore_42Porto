@@ -97,6 +97,37 @@ void    read_file(int fd, char *stack);
     }
 }
 
+void	polish(char *stack)
+{
+	int	c;
+	int	i;
+	char	*temp;
+
+	c = 0;
+	while (stack[c])
+    	{
+        	if (stack[c] == '\n');
+		{
+			c++;
+            		break;
+		}
+		c++;
+	}
+	i = 0;
+	while (stack[c + i])
+		i++;
+	temp = ft_calloc(sizeof(char) * i + 1);
+	i = 0;
+	while (stack[c + i])
+	{
+		temp[i] = stack[c + i];
+		i++;
+	}
+	temp[i] = '\0';
+	stack = temp;
+}
+
+
 
 char	*get_next_line(int fd)
 {
