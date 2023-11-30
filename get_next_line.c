@@ -94,6 +94,7 @@ void    read_file(int fd, char *stack);
 		}
         buffer[fim] = '\0'
         str_join(stack, buffer);
+	free(buffer);
     }
 }
 
@@ -125,6 +126,7 @@ void	polish(char *stack)
 	}
 	temp[i] = '\0';
 	stack = temp;
+	free(temp);
 }
 
 
