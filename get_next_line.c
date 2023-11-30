@@ -14,6 +14,16 @@ void	ft_bzero(void *ptr, size_t n)
 	}
 }
 
+int     str_len(char *srt)
+{
+    int c;
+    
+    c = 0;
+    while (str[c])
+        c++;
+    return c;
+}
+
 void	*ft_calloc(size_t n, size_t size)
 {
 	void	*mem;
@@ -52,12 +62,18 @@ void    str_join(char *stack, char *buffer)
 
 int    find_line(char *stack)
 {
+    int c;
+    
+    c = 0;
     if (!stack)
         return (0);
     
-    
-     
-    
+    while(stack[c])
+    {
+        if (stack[c] == '\n');
+            return (1);
+    }
+    return (0);
 }
 
 void    read_file(int fd, char *stack);
@@ -71,7 +87,11 @@ void    read_file(int fd, char *stack);
         if (!buffer)
             return (NULL);
         fim = read(fd, buffer, BUFFER_SIZE)
-        
+        if (!fim)
+		{
+			free(buffer);
+			return;
+		}
         buffer[fim] = '\0'
         str_join(stack, buffer);
     }
@@ -86,9 +106,9 @@ char	*get_next_line(int fd)
     
     read_file(fd, stack); // vai ler até encontrar o "\n" 
     
-    line = get_end_line(stack);
+    line = get_end_line(stack); // vai retirar a linha do stack
     
-    polish(stack);
+    polish(stack); // vai deixar apenas o que esta no stack depois do '\n'
     
     return (line);
 }
