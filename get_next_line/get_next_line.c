@@ -78,7 +78,7 @@ char	*get_end_line(char *stack)
 	linha = calloc(sizeof(char), (c + 1));
 	while (c >= i)
 	{
-		temp[i] = stack[i];
+		linha[i] = stack[i];
 		i++;
 	}
 	linha[i] = '\0';
