@@ -11,11 +11,11 @@ int	is_string_digit(char *str)
 {
 	int i = 0;
 
-	// Check if the string is empty
+	// Check string empty
 	if (str[0] == '\0')
 		return (0);
 
-	// Check each character
+	// Check characters
 	while (str[i] != '\0')
 	{
 		if (!ft_isdigit(str[i]))
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 		{
 			if (!is_string_digit(argv[c]))
 				return write(1, "Error\n", 6);
-			printf("numero = %s\n", argv[c]);
+			printf("number = %s\n", argv[c]);
 			c++;
 		}
 	}
