@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = push_swap
 
-SRCS = push_swap.c push.c
+SRCS = push_swap.c push.c swap.c rotate.c
 
 LIBFT = ./libft/libft.a
 

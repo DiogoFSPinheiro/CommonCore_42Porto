@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: diogosan <diogosan@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/28 12:14:32 by diogosan          #+#    #+#             */
+/*   Updated: 2024/03/28 12:14:37 by diogosan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 // int	ft_isdigit(int c)
@@ -178,7 +190,7 @@ int	main(int argc, char **argv)
 		if (check_if_num(argv[1]))
 			numbers = ft_split(argv[1], ' ');
 		else
-		 	return(printf("Error"));
+			return(printf("Error"));
 	}
 	else
 		numbers = argv + 1;
@@ -190,9 +202,17 @@ int	main(int argc, char **argv)
 		}
 	print_stack(a);
 	write(1,"\n",1);
-	print_stack(b);
-	write(1,"\n",1);
-	pb(&a, &b);
+	//print_stack(b);
+	//write(1,"\n",1);
+	
+	
+	pb(&a,&b);
+	pb(&a,&b);
+	rr(&a,&b);
+	
+	
+	//sb(&b);
+
 	print_stack(a);
 	write(1,"\n",1);
 	print_stack(b);
